@@ -6,6 +6,7 @@ require("dotenv").config();
 const GOERLI_RPC_URL = process.env.GOERLI_RPC_URL;
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY;
+const GOERLI_OPTIMISM_RPC_URL = process.env.GOERLI_OPTIMISM_RPC_URL;
 //const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY;
 
 module.exports = {
@@ -14,7 +15,7 @@ module.exports = {
             {
                 version: "0.8.17",
             },
-            { version: "0.8.0" },
+            { version: "0.6.2" },
         ],
     },
 
@@ -31,6 +32,11 @@ module.exports = {
             url: GOERLI_RPC_URL,
             accounts: [PRIVATE_KEY],
             chainId: 5,
+        },
+        goerliOptimism: {
+            url: GOERLI_OPTIMISM_RPC_URL,
+            accounts: [PRIVATE_KEY],
+            chainId: 420,
         },
     },
     namedAccounts: {
